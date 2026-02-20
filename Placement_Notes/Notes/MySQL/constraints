@@ -1,0 +1,48 @@
+-- ✅ Step 1: Create Database
+CREATE DATABASE demo_constraints;
+USE demo_constraints;
+
+-- ✅ Step 2: Create Table with Different Constraints
+-- We’ll create a students table with multiple constraints:
+
+CREATE TABLE students (
+    rollno INT PRIMARY KEY,              -- PRIMARY KEY (unique + not null)
+    name VARCHAR(100) NOT NULL,          -- NOT NULL (cannot be empty)
+    email VARCHAR(100) UNIQUE,           -- UNIQUE (no duplicates allowed)
+    department VARCHAR(50) DEFAULT 'IT', -- DEFAULT (if no value is given)
+    age INT CHECK (age >= 18),           -- CHECK (must satisfy condition)
+    gpa DECIMAL(3,2)
+);
+
+-- ✅ Step 3: Insert Values to Demonstrate Constraints
+-- 1. Insert a valid row ✅
+INSERT INTO students (rollno, name, email, age, gpa)
+VALUES (1001, 'Asha', 'asha@example.com', 20, 9.1);
+
+
+-- ✅ PRIMARY KEY constraint ❌ (duplicate rollno not allowed)
+-- This will fail because rollno 1001 already exists
+INSERT INTO students (rollno, name, email, age, gpa)
+VALUES (1001, 'Rahul', 'rahul@example.com', 22, 8.5);
+
+-- ✅ NOT NULL constraint ❌ (name cannot be NULL)
+-- This will fail because name is required
+INSERT INTO students (rollno, name, email, age, gpa)
+VALUES (1002, NULL, 'priya@example.com', 21, 8.9);
+
+-- ✅ UNIQUE constraint ❌ (duplicate email not allowed)
+-- This will fail because email must be unique
+INSERT INTO students (rollno, name, email, age, gpa)
+VALUES (1003, 'Priya', 'asha@example.com', 21, 8.9);
+
+-- ✅ DEFAULT constraint ✅ (if department not provided, it will use 'IT')
+INSERT INTO students (rollno, name, email, age, gpa)
+VALUES (1004, 'Karan', 'karan@example.com', 19, 7.8);
+-- Check result
+SELECT * FROM students WHERE rollno = 1004;
+
+-- ✅ CHECK constraint ❌ (age must be >= 18)
+-- This will fail because age < 18
+INSERT INTO students (rollno, name, email, age, gpa)
+VALUES (1005, 'Anita', 'anita@example.com', 16, 9.2);
+

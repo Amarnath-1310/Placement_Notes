@@ -1,0 +1,61 @@
+1. Create a Database & Table
+CREATE DATABASE college;
+
+USE college;
+
+CREATE TABLE students (
+    rollno INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT,
+    gpa FLOAT
+);
+
+INSERT INTO students VALUES
+(101, 'Ravi', 20, 8.5),
+(102, 'Priya', 19, 9.2),
+(103, 'Karan', 21, 7.0),
+(104, 'Divya', 22, 6.5),
+(105, 'Meena', 23, 5.8);
+
+2. Create a Simple View
+View that shows only student name and GPA:
+
+CREATE VIEW student_gpa AS
+SELECT name, gpa
+FROM students;
+
+👉 Now you can use it like a table:
+SELECT * FROM student_gpa;
+
+
+3. Create a Conditional View
+View that shows only students with GPA ≥ 7:
+
+CREATE VIEW toppers AS
+SELECT rollno, name, gpa
+FROM students
+WHERE gpa >= 7;
+
+SELECT * FROM toppers;
+
+4. Update Data Through View (if allowed)
+Views can sometimes be updated (if they are based on a single table without aggregates).
+
+UPDATE toppers
+SET gpa = 9.5
+WHERE rollno = 103;
+
+👉 This will also update the students table.
+
+5. Drop a View
+DROP VIEW toppers;
+
+🔑 Key Points about Views
+
+Virtual table (no physical data stored).
+
+Simplifies complex queries.
+
+Can provide restricted access to certain columns.
+
+Some views are read-only (cannot update).

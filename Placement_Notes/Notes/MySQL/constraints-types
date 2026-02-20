@@ -1,0 +1,53 @@
+## Main Types of Constraints (with easy examples):
+
+- **PRIMARY KEY**  
+  Makes sure each row is unique and not empty.  
+  _Example:_ Student roll number (no two students can have the same roll number).
+
+- **NOT NULL**  
+  The column must have a value; it can’t be empty.  
+  _Example:_ Student name (every student must have a name).
+
+- **UNIQUE**  
+  All values in the column must be different.  
+  _Example:_ Email address (no two students can have the same email).
+
+- **DEFAULT**  
+  Sets a default value if you don’t provide one.  
+  _Example:_ Department defaults to ‘IT’ if not specified.
+
+- **CHECK**  
+  Makes sure the value meets a condition.  
+  _Example:_ Age must be 18 or older.
+
+- **FOREIGN KEY**  
+  Links one table to another, ensuring the value exists in the other table.  
+  _Example:_ Marks table uses roll number from the students table.
+
+
+```sql
+CREATE TABLE students (
+    rollno INT PRIMARY KEY,              -- PRIMARY KEY (unique + not null)
+    name VARCHAR(100) NOT NULL,          -- NOT NULL (cannot be empty)
+    email VARCHAR(100) UNIQUE,           -- UNIQUE (no duplicates allowed)
+    department VARCHAR(50) DEFAULT 'IT', -- DEFAULT (if no value is given)
+    age INT CHECK (age >= 18)            -- CHECK (must satisfy condition)
+);
+
+CREATE TABLE marks (
+    mark_id INT PRIMARY KEY,
+    rollno INT,
+    subject VARCHAR(50),
+    score INT,
+    FOREIGN KEY (rollno) REFERENCES students(rollno) -- FOREIGN KEY
+);
+```
+
+**How each constraint is used:**
+- `rollno`: PRIMARY KEY (unique, not null)
+- `name`: NOT NULL (must have a value)
+- `email`: UNIQUE (no duplicates)
+- `department`: DEFAULT ('IT' if not given)
+- `age`: CHECK (must be 18 or older)
+- `marks.rollno`: FOREIGN KEY (must match a student)
+
