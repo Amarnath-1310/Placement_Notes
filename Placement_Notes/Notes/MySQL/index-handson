@@ -1,0 +1,54 @@
+CREATE DATABASE IndexDemo;
+USE IndexDemo;
+
+-- Create Sample Table
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,      -- automatically creates a clustered index
+    FirstName NVARCHAR(50),
+    LastName NVARCHAR(50),
+    Department NVARCHAR(50),
+    Salary INT
+);
+
+
+✅ Create Clustered Index Explicitly
+
+(If primary key is not there)
+-- Drop primary key first if exists, then:
+
+CREATE CLUSTERED INDEX IX_Employees_Dept
+ON Employees(Department);
+
+
+👉 Now rows are physically sorted by Department.
+
+✅ Create Non-Clustered Index
+CREATE NONCLUSTERED INDEX IX_Employees_Salary
+ON Employees(Salary);
+
+
+👉 Helps when you run:
+
+SELECT * FROM Employees WHERE Salary > 50000;
+
+✅ Drop Index
+DROP INDEX IX_Employees_Salary ON Employees;
+DROP INDEX IX_Employees_Dept ON Employees;
+
+🔹 Demo: Why Indexing Matters
+
+Without Index
+SELECT * FROM Employees WHERE Salary = 60000;
+👉 The database scans all rows (Table Scan). Slow when millions of rows exist.
+
+With Non-Clustered Index on Salary
+CREATE NONCLUSTERED INDEX IX_Employees_Salary
+ON Employees(Salary);
+👉 The query will use index → directly finds Salary = 60000 (Index Seek). Much faster 🚀.
+
+📌 Quick Summary
+Clustered Index → sorts the table itself (1 per table).
+Non-Clustered Index → keeps a separate index (many allowed).
+Advantages → faster reads, efficient queries.
+Disadvantages → slower writes, extra storage.
+Best Practice → create indexes only on frequently searched columns.
