@@ -1,0 +1,58 @@
+-- Wildcard usage examples
+In SQL, wildcards are used with LIKE:
+
+% → zero or more characters
+_ → exactly one character
+[ ] → any one character from a range/set (SQL Server)
+[^ ] or [! ] → not in a set (SQL Server)
+
+
+-- Create database and table for wildcard examples
+CREATE DATABASE WildcardDemo;
+USE WildcardDemo;
+
+CREATE TABLE students (
+    id INT PRIMARY KEY,
+    name VARCHAR(20)
+);
+
+INSERT INTO students VALUES
+    (1, 'Amit'),
+    (2, 'Ravi'),
+    (3, 'Ramesh'),
+    (4, 'Chetan'),
+    (5, 'Meena'),
+    (6, 'Sree'),
+    (7, 'Anil'),
+    (8, 'Deepa'),
+    (9, 'Bala'),
+    (10, 'Neel');
+
+
+1. Starts with a letter
+SELECT * FROM students 
+WHERE name LIKE 'A%';   -- names starting with A
+
+2. Ends with a letter
+SELECT * FROM students 
+WHERE name LIKE '%a';   -- names ending with a
+
+3. Contains a sequence
+SELECT * FROM students 
+WHERE name LIKE '%ee%';   -- names containing 'ee'
+
+4. Single-character wildcard (_)
+SELECT * FROM students 
+WHERE name LIKE 'R_vi';   -- matches Ravi, but not Ramesh
+
+5. Specific length names
+SELECT * FROM students 
+WHERE name LIKE '____';   -- names with exactly 4 letters
+
+6. Range with [ ] (SQL Server / MySQL)
+SELECT * FROM students 
+WHERE name LIKE '[A-C]%';   -- names starting with A, B, or C
+
+7. Not in range (SQL Server)
+SELECT * FROM students 
+WHERE name LIKE '[^A-C]%';  -- names NOT starting with A, B, or C
