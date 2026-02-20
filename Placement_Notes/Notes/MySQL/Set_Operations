@@ -1,0 +1,60 @@
+CREATE DATABASE SetOperationsDemo;
+USE SetOperationsDemo;
+
+CREATE TABLE EmployeeA (
+    ID INT,
+    Name VARCHAR(255),
+    DeptID INT
+);
+
+INSERT INTO EmployeeA (ID, Name, DeptID) VALUES
+(1, 'John', 10),
+(2, 'Alice', 20),
+(3, 'Bob', 30),
+(4, 'Eve', 40),
+(5, 'Charlie', 50);
+
+CREATE TABLE EmployeeB (
+    ID INT,
+    Name VARCHAR(255),
+    DeptID INT
+);
+
+INSERT INTO EmployeeB (ID, Name, DeptID) VALUES
+(3, 'Bob', 30),
+(4, 'Eve', 40),
+(5, 'Charlie', 50),
+(6, 'David', 60),
+(7, 'Frank', 70);
+
+-- UNION
+-- Combines results from two queries and removes duplicates.
+
+SELECT * FROM EmployeeA
+UNION
+SELECT * FROM EmployeeB
+
+
+-- UNION ALL
+-- Combines results from two queries and includes all duplicates.
+
+SELECT * FROM EmployeeA
+UNION ALL
+SELECT * FROM EmployeeB
+
+
+-- INTERSECT
+-- Returns only the rows that are present in both queries.
+
+SELECT * FROM EmployeeA
+INTERSECT
+SELECT * FROM EmployeeB
+
+
+-- EXCEPT (or MINUS in some databases)
+-- Returns rows from the first query that are not present in the second query.
+
+SELECT * FROM EmployeeA
+EXCEPT
+SELECT * FROM EmployeeB
+
