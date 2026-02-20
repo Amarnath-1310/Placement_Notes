@@ -1,0 +1,55 @@
+Temporary tables are mainly of two types:
+Local Temporary Table (#tablename) → visible only to the session that created it.
+Global Temporary Table (##tablename) → visible to all sessions until the creating session ends.
+
+
+
+1. Creating a Local Temporary Table
+-- Create a local temporary table
+CREATE TABLE #TempStudents (
+    RollNo INT,
+    Name VARCHAR(50),
+    Age INT
+);
+
+-- Insert values into temp table
+INSERT INTO #TempStudents (RollNo, Name, Age)
+VALUES 
+(1, 'Rahul', 21),
+(2, 'Priya', 22),
+(3, 'Kiran', 23);
+
+-- Select values
+SELECT * FROM #TempStudents;
+
+🔹 The table #TempStudents will exist only for your current session/connection.
+
+
+-------------------------------------------------------------------------------------------
+
+
+2. Creating a Global Temporary Table
+-- Create a global temporary table
+CREATE TABLE ##TempStudents (
+    RollNo INT,
+    Name VARCHAR(50),
+    Age INT
+);
+
+-- Insert values
+INSERT INTO ##TempStudents (RollNo, Name, Age)
+VALUES 
+(101, 'Arjun', 24),
+(102, 'Meena', 25),
+(103, 'Vijay', 26);
+
+-- Select values
+SELECT * FROM ##TempStudents;
+
+🔹 The table ##TempStudents can be accessed by other sessions too, until the creating session ends.
+
+-------------------------------------------------------------------------------------------
+
+3. Drop Temporary Table
+DROP TABLE #TempStudents;   -- for local temp table
+DROP TABLE ##TempStudents;  -- for global temp table
