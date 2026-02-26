@@ -1,0 +1,25 @@
+-- SELF JOIN: Joining a table with itself
+
+CREATE DATABASE SelfJoin;
+USE SelfJoin;
+
+CREATE TABLE Employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    manager_id INT
+);
+
+INSERT INTO Employees (emp_id, emp_name, manager_id) VALUES
+(1, 'Alice', 1), 
+(2, 'Bob', 1),
+(3, 'Charlie', 1),
+(4, 'David', 2),
+(5, 'Eva', 3);
+
+
+SELECT e.emp_name AS Employee,
+       m.emp_name AS Team_Lead
+FROM Employees e
+JOIN Employees m
+   ON e.manager_id = m.emp_id;
+  

@@ -1,0 +1,70 @@
+CREATE DATABASE UniversityDB;
+USE UniversityDB;
+
+-- Parent table: Departments
+CREATE TABLE Departments (
+    dept_no INT PRIMARY KEY,
+    dept_name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO Departments (dept_no, dept_name) VALUES
+(101, 'Computer Science'),
+(102, 'Mechanical'),
+(103, 'Civil Engineering');
+
+
+-- Child table: Students
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(50) NOT NULL,
+    dept_no INT NULL,
+    FOREIGN KEY (dept_no) REFERENCES Departments(dept_no)
+);
+
+INSERT INTO Students (student_id, student_name, dept_no) VALUES
+(1, 'Alice', 101),  -- Belongs to Computer Science
+(2, 'Bob', 102),    -- Belongs to Mechanical
+(3, 'David', NULL); -- No department assigned yet
+
+
+-- SYNTAX:
+-- SELECT a.column1, b.column2
+-- FROM tableA a
+-- INNER JOIN tableB b
+--    ON a.common_column = b.common_column;
+
+
+-- Examples of different types of JOINs
+
+-- INNER JOIN → only students that belong to a valid department
+SELECT s.student_id, s.student_name, d.dept_name
+FROM Students s
+INNER JOIN Departments d ON s.dept_no = d.dept_no;
+
+
+-- LEFT OUTER JOIN → all students, even those with no department
+SELECT s.student_id, s.student_name, d.dept_name
+FROM Students s
+LEFT JOIN Departments d ON s.dept_no = d.dept_no;
+
+-- RIGHT OUTER JOIN → all departments, even those without students
+SELECT s.student_id, s.student_name, d.dept_name
+FROM Students s
+RIGHT JOIN Departments d ON s.dept_no = d.dept_no;
+
+
+-- FULL OUTER JOIN → all students and all departments (whether matched or not)
+SELECT s.student_id, s.student_name, d.dept_name
+FROM Students s
+FULL OUTER JOIN Departments d ON s.dept_no = d.dept_no;
+
+
+-- 🧠 Ultra-short memory trick
+-- INNER → Only common
+-- LEFT → All left + matching right
+-- RIGHT → All right + matching left
+-- FULL → Everything from both
+
+
+
+

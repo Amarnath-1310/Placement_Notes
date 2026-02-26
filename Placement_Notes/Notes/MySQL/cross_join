@@ -1,0 +1,36 @@
+-- Cross Join Example
+-- A CROSS JOIN combines every row from one table with every row from another table.
+-- 👉 It produces all possible combinations of rows.
+-- CROSS JOIN returns the Cartesian product of two tables (all combinations).
+
+-- What this does:
+-- Takes each student
+-- Pairs them with each course
+
+CREATE DATABASE CrossJoinDemo;
+USE CrossJoinDemo;
+
+    
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(50)
+);
+
+INSERT INTO Students (student_id, student_name) VALUES
+(1, 'Alice'),
+(2, 'Bob'),
+(3, 'Charlie');
+
+CREATE TABLE Courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(50)
+);
+
+INSERT INTO Courses (course_id, course_name) VALUES
+(101, 'Maths'),
+(102, 'Physics'),
+(103, 'Chemistry');
+
+SELECT s.student_name, c.course_name
+FROM Students s
+CROSS JOIN Courses c;
