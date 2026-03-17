@@ -75,3 +75,15 @@ console.log(x); // This will print 10, as var is function-scoped
 }
 // console.log(d); // This will throw an error: d is not defined
 
+
+// example for ==(loose equality) vs === (strict equality)
+let num1 = 10;
+let num2 = "10";
+console.log(num1 == num2); // This will print true, as == performs type coercion
+console.log(num1 === num2); // This will print false, as === does not perform type coercion and checks for both value and type
+// another example
+let bool1 = true;
+let bool2 = 1;
+console.log(bool1 == bool2); // This will print true, as == performs type coercion and converts true to 1
+console.log(bool1 === bool2); // This will print false, as === does not perform type coercion and checks for both value and type   
+
