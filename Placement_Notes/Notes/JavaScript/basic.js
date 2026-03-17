@@ -207,3 +207,53 @@ console.log(!a2); // This will print false, as !true is false
 console.log(!b2); // This will print true, as !false is true    
 
 
+// sync vs async in JavaScript
+// JavaScript is a single-threaded language, which means it can only execute one task at a time. 
+// Synchronous code is executed in a sequential manner, where each line of code waits for the previous line to finish before executing. 
+// Asynchronous code, on the other hand, allows multiple tasks to be executed concurrently, without blocking the main thread. 
+// Asynchronous operations are typically handled using callbacks, promises, or async/await syntax.
+// example of synchronous code
+console.log("Synchronous code start");  
+console.log("Synchronous code end");
+
+// example of asynchronous code using setTimeout    
+console.log("Asynchronous code start");
+setTimeout(() => {
+    console.log("This will be printed after 10 seconds");
+}, 10000);
+console.log("Asynchronous code end");
+
+// example of asynchronous code using promises  
+console.log("Asynchronous code with promises start");
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Promise resolved after 2 seconds");
+    }, 2000);
+});
+
+promise.then((result) => {
+    console.log(result);
+});
+console.log("Asynchronous code with promises end");
+
+// example of asynchronous code using async/await   
+console.log("Asynchronous code with async/await start");
+async function asyncFunction() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Async function resolved after 2 seconds");
+        }, 2000);
+    });
+}
+async function main() {
+    const result = await asyncFunction();
+    console.log(result);
+}   
+main();
+console.log("Asynchronous code with async/await end");
+
+// event loop in JavaScript
+// The event loop is a mechanism that allows JavaScript to perform non-blocking operations by offloading tasks to the browser's APIs and then executing them when they are ready. 
+// The event loop continuously checks the call stack and the task queue. If the call stack is empty, it takes the first task from the task queue and pushes it onto the call stack for execution. 
+// This allows JavaScript to handle asynchronous operations without blocking the main thread, ensuring a responsive user experience.
+
