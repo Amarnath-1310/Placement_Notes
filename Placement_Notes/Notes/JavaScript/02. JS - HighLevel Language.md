@@ -1,0 +1,82 @@
+# 🧠 High-level language = Human-friendly language
+
+- Easy to read
+- Easy to write
+- Easy to understand
+- You don't worry about memory, CPU, or hardware
+
+**Examples of High-Level Languages:**
+
+- JavaScript
+- Python
+- Java
+- C#
+- Ruby
+
+---
+
+## 2️⃣ What is a Low-Level Language? (Easy explanation)
+
+**🧠 Low-level language = Machine-friendly language**
+
+- Very close to hardware
+- Hard to read and write
+- Programmer controls memory and CPU
+- Faster, but complex
+
+**Examples of Low-Level Languages:**
+
+- Assembly
+- Machine Code
+
+**Code examples:**
+
+*Same task in 3 ways – adding two numbers (5 + 3):*
+
+**1. JavaScript (High-Level):**
+```javascript
+let sum = 5 + 3;
+console.log(sum);  // 8
+```
+
+**2. Assembly (Low-Level) – x86 example:**
+```asm
+mov eax, 5    ; put 5 in register eax
+add eax, 3    ; add 3 to eax
+; result (8) is now in eax
+```
+
+**3. Machine Code (Lowest level – raw bytes the CPU runs):**
+```
+B8 05 00 00 00   ; move 5 into register
+83 C0 03         ; add 3
+```
+*(You work with CPU registers and raw instructions – no variable names, no “+” symbol.)*
+
+*(C is often considered middle-level)*
+
+---
+
+## 3️⃣ Real-Life Analogy 🚗
+
+### High-Level Language → 👉 Driving a car
+
+You use:
+
+- Steering
+- Accelerator
+- Brake
+
+You don't care how engine works internally.
+
+**🚘 JavaScript = driving the car**
+
+### Low-Level Language → 👉 Building the engine yourself
+
+You control:
+
+- Pistons
+- Fuel injection
+- Gears
+
+**🔧 Assembly = building the engine**

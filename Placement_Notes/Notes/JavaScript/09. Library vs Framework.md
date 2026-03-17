@@ -1,0 +1,82 @@
+# Library vs Framework (easy understanding)
+
+## In one line
+
+- **Library:** You call it when you need it. **You** are in control.
+- **Framework:** It calls **your** code when it needs it. **It** is in control.
+
+---
+
+## Short analogies
+
+| | **Library** | **Framework** |
+|---|-------------|----------------|
+| Like | **Toolbox** – you pick a tool when you need it | **Skeleton** – you fill in the blanks; it runs the show |
+| Prison / outside | **Outside world** – you decide when to do what; you **call** when you want | **Inside the structure** – fixed schedule; **it** tells you when (e.g. breakfast at 7, yard at 10). You follow; it calls your code. |
+| Other | Cooking at home (you use tools when you want) | Restaurant (menu + process; kitchen runs the flow, calls your “recipe” when needed) |
+
+---
+
+## Library
+
+- **Developers/community** create reusable code (functions, helpers, boilerplate). We **use those functions for our use case** – we import and call them when we need; our code stays in control.
+- For each need we pick a library: e.g. **for UI** we use **React**; **for fetching APIs** we use **Axios**. We don’t build everything from scratch – we use the right library for the job.
+
+**Examples:** React (UI), Axios (API calls), Lodash (utils), jQuery, date-fns.
+
+```text
+You: "I need to fetch API → use Axios (axios.get())."   You: "I need UI components → use React."
+```
+
+---
+
+## Framework
+
+- **Structure** that **runs your app** and **calls your code** at the right time (e.g. when a route is hit, when a component renders). It controls the flow; you plug in logic.
+
+**Examples:** Angular, Vue, Express, Next.js, **Spring**, **Spring Boot**, **Django**.
+
+```text
+Framework: "User hit /login → I'll run your login handler."   "Component on screen → I'll run your render."
+```
+
+---
+
+## Quick comparison
+
+| | Library | Framework |
+|---|--------|-----------|
+| Who calls? | You call it | It calls you |
+| Inversion of control | No | Yes |
+| Examples (JS) | React, Lodash, Axios, jQuery | Angular, Vue, Express, Next.js |
+
+---
+
+## Node.js, Spring, Spring Boot, Django – what are they?
+
+| Name | What it is | Short note |
+|------|------------|------------|
+| **Node.js** | **Runtime** (not library or framework) | Runs JavaScript on the server. You use it with a **framework** (e.g. Express) or just **libraries**. |
+| **Express** | **Framework** (runs on Node.js) | Defines routes; calls your handler when a URL is hit. |
+| **Spring** | **Framework** (Java) | Controls app flow, dependency injection, when your beans run. It calls your code. |
+| **Spring Boot** | **Framework** (Java, built on Spring) | Same idea as Spring; adds defaults and quick setup. Still a framework – it runs the app and calls your code. |
+| **Django** | **Framework** (Python) | Controls routing, ORM, admin; runs your app and calls your views when a URL is requested. |
+
+---
+
+## TypeScript, Vue.js, AngularJS, Angular – what are they?
+
+| Name | What it is | Short note |
+|------|------------|------------|
+| **TypeScript** | **Language** (not library or framework) | Superset of JavaScript; adds types. You write TS, it compiles to JS. You use it with any library/framework (React, Angular, Vue, etc.). |
+| **Vue.js** | **Framework** | Full UI framework – controls routing, lifecycle, when your components run. It calls your code. |
+| **AngularJS** | **Framework** (old) | The original “Angular” (v1.x). Full framework; it runs the app and calls your code. |
+| **Angular** | **Framework** (modern) | The current “Angular” (v2+). Rewrite of AngularJS; still a framework – controls the app, calls your components. |
+
+**Note:** AngularJS and Angular are different: AngularJS = v1 (old). Angular = v2+ (current; often just called “Angular”).
+
+---
+
+**Mnemonic:** Library = "I call **it**."   Framework = "**It** calls me."
+
+**Remember:** React, Axios, Lodash are **libraries**. Angular, AngularJS, Vue.js, Express, Next.js, Spring, Spring Boot, Django are **frameworks**. Node.js is a **runtime**. TypeScript is a **language**.

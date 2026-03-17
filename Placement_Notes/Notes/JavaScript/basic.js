@@ -87,3 +87,51 @@ let bool2 = 1;
 console.log(bool1 == bool2); // This will print true, as == performs type coercion and converts true to 1
 console.log(bool1 === bool2); // This will print false, as === does not perform type coercion and checks for both value and type   
 
+
+// template literals
+const name = "John";
+const age = 30;
+//console.log("My name is " + name + " and I am " + age + " years old.");
+
+// using template literals and string interpolation
+console.log(`My name is ${name} and I am ${age} years old.`); // This will print the same output as above, but with cleaner syntax and easier readability
+
+
+// primitive data types in JavaScript types
+// string, number, boolean, null, undefined, symbol, bigint
+// example of primitive data types
+let str = "Hello, World!"; // string
+let num = 42; // number
+let bool = true; // boolean
+let nullValue = null; // null
+let undefinedValue; // undefined
+let symbolValue = Symbol("unique"); // symbol   
+let bigIntValue = 9007199254740991n; // bigint
+
+console.log(str);
+console.log(num);
+console.log(bool);
+console.log(nullValue);
+console.log(undefinedValue);
+console.log(symbolValue);
+console.log(bigIntValue);
+
+// non-primitive data types in JavaScript
+// object, array, function
+// example of non-primitive data types
+let obj = { name: "Alice", age: 25 }; // object 
+let arr = [1, 2, 3, 4, 5]; // array
+function greet() { // function
+    console.log("Hello!");
+}
+console.log(obj);
+console.log(arr);
+greet();
+
+
+// Stack memory and heap memory in JavaScript
+// Stack memory is used for storing primitive data types and function calls, while heap memory is used for storing objects and arrays.
+// When a function is called, a new stack frame is created for that function, and when the function returns, the stack frame is removed. 
+// Objects and arrays are stored in heap memory, and variables that reference them store the memory address of the object or array in the stack. 
+// When an object or array is no longer referenced, it becomes eligible for garbage collection, which frees up memory in the heap.
+
