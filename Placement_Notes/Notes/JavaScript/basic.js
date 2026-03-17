@@ -257,3 +257,91 @@ console.log("Asynchronous code with async/await end");
 // The event loop continuously checks the call stack and the task queue. If the call stack is empty, it takes the first task from the task queue and pushes it onto the call stack for execution. 
 // This allows JavaScript to handle asynchronous operations without blocking the main thread, ensuring a responsive user experience.
 
+// ES5 vs ES6
+// ES5 (ECMAScript 5) is the fifth edition of the ECMAScript standard, which was released in 2009. It introduced features like strict mode, JSON support, and new array methods.
+// ES6 (ECMAScript 2015) is the sixth edition of the ECMAScript standard, which was released in 2015. It introduced many new features such as let and const for variable declarations, arrow functions, template literals, destructuring assignment, default parameters, rest and spread operators, classes, modules, promises, and more. 
+// ES6 brought significant improvements to the JavaScript language, making it more powerful and easier to write cleaner code.
+
+
+// function in JavaScript
+// A function is a reusable block of code that performs a specific task. Functions can take parameters, perform operations, and return values. 
+// Functions can be defined using function declarations, function expressions, or arrow functions.
+// types of functions in JavaScript
+
+// 1. Function declaration (ES5)
+function add(a, b) {
+    return a + b;
+}
+console.log(add(2, 3)); // This will print 5
+
+// 2. Function expression (ES5)
+const subtract = function(a, b) {
+    return a - b;
+};
+console.log(subtract(5, 3)); // This will print 2
+
+// 3. Arrow function (ES6)
+const multiply = (a, b) => {
+    return a * b;
+};
+console.log(multiply(4, 5)); // This will print 20
+
+// 4. Implicit return in arrow function (ES6)
+const divide = (a, b) => a / b;
+console.log(divide(10, 2)); // This will print 5
+
+// 5. Function with default parameters (ES6) 
+function defaultParams(a, b=10) {
+    return a + b;
+}
+console.log(defaultParams(5)); // This will print 15
+console.log(defaultParams(5, 20)); // This will print 25
+
+// callback function using to make a simple calculator(add, subtract, multiply, divide) using callback functions (Higher-order functions)
+// Higher-order functions are functions that can take other functions as arguments or return functions as their result.
+function calculator(a, b, operation) {
+    return operation(a, b);
+}   
+function addOperation(a, b) {
+    return a + b;
+}   
+function subtractOperation(a, b) {
+    return a - b;
+}
+function multiplyOperation(a, b) {
+    return a * b;
+}
+function divideOperation(a, b) {
+    return a / b;
+}   
+console.log(calculator(10, 5, addOperation)); // This will print 15
+console.log(calculator(10, 5, subtractOperation)); // This will print 5
+console.log(calculator(10, 5, multiplyOperation)); // This will print 50
+console.log(calculator(10, 5, divideOperation)); // This will print 2   
+
+
+// type conversion in JavaScript
+// Type conversion is the process of converting a value from one data type to another. 
+// JavaScript provides several built-in functions for type conversion, such as String(), Number(), Boolean(), and more. 
+// Type conversion can be implicit (performed automatically by JavaScript) or explicit (performed manually by the programmer).
+
+// explicit type conversion
+let n1 = 10;
+let str1 = String(n1);
+console.log(str1); // This will print "10"
+let str2 = "20";
+let n2 = Number(str2);
+console.log(n2); // This will print 20
+
+// type coercion (implicit type conversion)
+let n3 = 10;
+let str3 = "20";
+console.log(10 + n3 + str3); // This will print "1020", as the number 10 is coerced to a string and concatenated with "20"
+console.log("5" - 2); // This will print 3, as the string "5" is coerced to a number and subtracted by 2
+console.log("5" * 2); // This will print 10, as the string "5" is coerced to a number and multiplied by 2
+console.log("5" / 2);   // This will print 2.5, as the string "5" is coerced to a number and divided by 2
+console.log("5" + 2); // This will print "52", as the number 2 is coerced to a string and concatenated with "5" 
+
+
+
+
