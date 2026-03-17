@@ -135,3 +135,75 @@ greet();
 // Objects and arrays are stored in heap memory, and variables that reference them store the memory address of the object or array in the stack. 
 // When an object or array is no longer referenced, it becomes eligible for garbage collection, which frees up memory in the heap.
 
+
+// operators in JavaScript
+// arithmetic operators: +, -, *, /, %, ++, --
+// assignment operators: =, +=, -=, *=, /=, %=
+// comparison operators: ==, ===, !=, !==, >, <, >=, <=     
+// logical operators: &&, ||, !
+// conditional (ternary) operator: condition ? expressionIfTrue : expressionIfFalse
+// bitwise operators: &, |, ^, ~, <<, >>, >>>
+
+// example of operators in JavaScript
+let a1 = 10;
+let b1 = 5;
+console.log(a1 + b1);   // This will print 15
+console.log(a1 - b1);   // This will print 5
+console.log(a1 * b1);   // This will print 50
+console.log(a1 / b1);   // This will print 2
+console.log(a1 % b1);   // This will print 0
+a1++; // This will increment a1 by 1, so a1 will become 11
+console.log(a1);
+b1--; // This will decrement b1 by 1, so b1 will become 4
+console.log(b1);
+
+// assignment operators
+a1 += 5; // This will add 5 to a1, so a1 will become 16
+console.log(a1);
+b1 *= 2; // This will multiply b1 by 2, so b1 will become 8
+console.log(b1);
+
+// comparison operators
+console.log(a1 == b1); // This will print false, as 16 is not equal to 8
+console.log(a1 === b1); // This will print false, as 16 is not equal to 8 and they are of the same type
+console.log(a1 != b1); // This will print true, as 16 is not equal to 8
+console.log(a1 !== b1); // This will print true, as 16 is not equal to 8 and they are of the same type
+console.log(a1 > b1); // This will print true, as 16 is greater than 8
+console.log(a1 < b1); // This will print false, as 16 is not less than 8
+console.log(a1 >= b1); // This will print true, as 16 is greater than or equal to 8
+console.log(a1 <= b1); // This will print false, as 16 is not less than or equal to 8
+console.log(a1 > 15 && b1 < 10); // This will print true, as 16 is greater than 15 and 8 is less than 10
+console.log(a1 > 15 || b1 < 5); // This will print true, as 16 is greater than 15, even though 8 is not less than 5
+console.log(!(a1 > 15)); // This will print false, as a1 is greater than 15, so the condition inside the parentheses is true, and the ! operator negates it to false    
+
+// conditional (ternary) operator
+let age1 = 18;
+let canVote = age1 >= 18 ? "Yes" : "No";    
+
+console.log(canVote); // This will print "Yes", as age1 is greater than or equal to 18  
+age1 = 17;
+canVote = age1 >= 18 ? "Yes" : "No";    
+console.log(canVote); // This will print "No", as age1 is less than 18
+
+// bitwise operators
+let x1 = 5; // In binary: 0101
+let y1 = 3; // In binary: 0011
+console.log(x1 & y1); // This will print 1, as 0101 & 0011 = 0001
+console.log(x1 | y1); // This will print 7, as 0101 | 0011 = 0111
+console.log(x1 ^ y1); // This will print 6, as 0101 ^ 0011 = 0110
+console.log(~x1); // This will print -6, as ~0101 = 1010 (in two's complement, this represents -6)
+console.log(x1 << 1); // This will print 10, as 0101 << 1 = 1010 (which is 10 in decimal)
+console.log(x1 >> 1); // This will print 2, as 0101 >> 1 = 0010 (which is 2 in decimal)
+// Note: Bitwise operators work on 32-bit integers, so the results may not be what you expect if you use them with larger numbers or non-integer values.
+// >>> is the unsigned right shift operator, which shifts bits to the right and fills the leftmost bits with zeros. For example:
+console.log(x1 >>> 1); // This will print 2, as 0101 >>> 1 = 0010 (which is 2 in decimal)
+
+// logical operators
+let a2 = true;
+let b2 = false;
+console.log(a2 && b2); // This will print false, as true && false is false
+console.log(a2 || b2); // This will print true, as true || false is true
+console.log(!a2); // This will print false, as !true is false
+console.log(!b2); // This will print true, as !false is true    
+
+
