@@ -572,3 +572,22 @@ console.log(arr7.every((element) => element > 0)); // This will print true, as e
 
 // In summary, arrays are a fundamental data structure in JavaScript that allow you to store and manipulate collections of values.
 
+
+// Math in JavaScript
+// JavaScript provides a built-in Math object that has properties and methods for mathematical constants and functions. 
+// Some commonly used Math methods include Math.round(), Math.floor(), Math.ceil(), Math.random(), Math.max(), Math.min(), and more.
+// example of Math methods
+console.log(Math.round(4.49)); // This will print 4, as Math.round() rounds a number to the nearest integer
+console.log(Math.floor(4.7)); // This will print 4, as Math.floor() rounds a number down to the nearest integer
+console.log(Math.ceil(4.2)); // This will print 5, as Math.ceil() rounds a number up to the nearest integer
+console.log(Math.random()); // This will print a random number between 0 (inclusive) and 1 (exclusive)
+console.log(Math.max(1, 5, 3)); // This will print 5, as Math.max() returns the largest of the given numbers
+console.log(Math.min(1, 5, 3)); // This will print 1, as Math.min() returns the smallest of the given numbers   
+// Abs() method returns the absolute value of a number
+console.log(Math.abs(-5)); // This will print 5, as Math.abs() returns the absolute value of a number (the distance of the number from zero on the number line)
+// pow() method returns the base to the exponent power, that is, base^exponent
+console.log(Math.pow(2, 3)); // This will print 8, as Math.pow() returns the base (2) raised to the exponent (3), which is 2^3 = 8
+// sqrt() method returns the square root of a number
+console.log(Math.sqrt(16)); // This will print 4, as Math.sqrt() returns the square root of a number (the value that, when multiplied by itself, gives the original number, in this case, 4 * 4 = 16)
+// In summary, the Math object in JavaScript provides a variety of methods for performing mathematical operations and working with numbers.
+
