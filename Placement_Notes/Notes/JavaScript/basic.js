@@ -64,6 +64,39 @@ console.log(x); // This will print 10, as var is function-scoped
 // console.log(y); // This will throw an error: y is not defined
 // console.log(z); // This will throw an error: z is not defined
 
+{
+    var a = 10; // var is function-scoped, so it will be accessible outside the block
+    let b = 20; // let is block-scoped, so it will not be accessible outside the block
+    const c = 30; // const is block-scoped, so it will not be accessible outside the block
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+console.log(a); // This will print 10, as var is function-scoped
+// console.log(b); // This will throw an error: b is not defined, as let is block-scoped
+// console.log(c); // This will throw an error: c is not defined, as const is block-scoped
+
+
+// function scope vs block scope
+function scopeTest() {
+    var a = 10; // var is function-scoped, so it will be accessible throughout the function
+    let b = 20; // let is block-scoped, so it will only be accessible within the block it is defined in
+    const c = 30; // const is block-scoped, so it will only be accessible within the block it is defined in
+    if (true) {
+        var a = 40; // This will overwrite the previous 'a' variable, as var is function-scoped
+        let b = 50; // This will create a new 'b' variable that is only accessible within this block
+        const c = 60; // This will create a new 'c' variable that is only accessible within this block
+        console.log(a); // This will print 40, as the 'a' variable is overwritten
+        console.log(b); // This will print 50, as this 'b' variable is different from the outer 'b'
+        console.log(c); // This will print 60, as this 'c' variable is different from the outer 'c'
+    }
+    console.log(a); // This will print 40, as the 'a' variable is overwritten
+    console.log(b); // This will print 20, as the outer 'b' variable is still accessible
+    console.log(c); // This will print 30, as the outer 'c' variable is still accessible
+}   
+scopeTest();
+
 
 // In summary:
 // - var allows redeclaration and reassignment, and is function-scoped.
@@ -341,6 +374,114 @@ console.log("5" - 2); // This will print 3, as the string "5" is coerced to a nu
 console.log("5" * 2); // This will print 10, as the string "5" is coerced to a number and multiplied by 2
 console.log("5" / 2);   // This will print 2.5, as the string "5" is coerced to a number and divided by 2
 console.log("5" + 2); // This will print "52", as the number 2 is coerced to a string and concatenated with "5" 
+
+
+// contionals in JavaScript
+// Conditional statements are used to perform different actions based on different conditions. 
+// JavaScript supports several types of conditional statements, including if...else, switch, and ternary operator.  
+// The if...else statement is used to execute a block of code if a specified condition is true, and another block of code if the condition is false.
+// The switch statement is used to perform different actions based on different cases. 
+// The ternary operator is a shorthand for the if...else statement, and it takes three operands: a condition, an expression to execute if the condition is true, and an expression to execute if the condition is false.
+// example of if...else statement
+let ageVote = 18;
+if (ageVote >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
+}
+
+// example of switch statement  
+let day = 3;
+switch (day) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");
+        break;
+    case 4:
+        console.log("Thursday");
+        break;
+    case 5:
+        console.log("Friday");
+        break;
+    case 6:
+        console.log("Saturday");
+        break;
+    case 7:
+        console.log("Sunday");
+        break;
+    default:
+        console.log("Invalid day");
+}   
+
+// example of ternary operator
+let isMember = true;
+let discount = isMember ? 0.1 : 0;
+console.log(discount); // This will print 0.1, as isMember is true, so the condition is true and the expression after the ? is executed. If isMember were false, it would print 0, as the expression after the : would be executed instead.
+
+// control statements in JavaScript
+// Control statements are used to control the flow of execution in a program. 
+// JavaScript supports several types of control statements, including if...else, switch, for, while, do...while, break, continue, and more. 
+// Control statements allow you to execute different blocks of code based on certain conditions or to repeat a block of code multiple times.
+// example of for loop
+for (let i = 0; i < 5; i++) {
+    console.log(i); // This will print numbers from 0 to 4
+}
+
+// example of while loop
+let j = 0;  
+while (j < 5) {
+    console.log(j); // This will print numbers from 0 to 4
+    j++;
+}   
+
+// example of do...while loop
+let k = 0;  
+do {
+    console.log(k); // This will print numbers from 0 to 4
+    k++;
+} while (k < 5);
+
+// example of break statement
+for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        break; // This will exit the loop when i is equal to 5
+    }
+    console.log(i); // This will print numbers from 0 to 4
+}
+
+// example of continue statement
+for (let i = 0; i < 10; i++) {
+    if (i % 2 === 0) {  
+        continue; // This will skip the rest of the loop body when i is even
+    }
+    console.log(i); // This will print odd numbers from 1 to 9
+}
+
+// example of nested loops
+for (let i = 1; i <= 3; i++) {
+    for (let j = 1; j <= 3; j++) {  
+        console.log(`i: ${i}, j: ${j}`); // This will print the values of i and j for each iteration of the inner loop
+    }
+}   
+
+// In summary, control statements are essential for managing the flow of execution in a JavaScript program, allowing you to make decisions and repeat actions based on specific conditions.
+
+// program for vote age using if...else statement input from user
+let ageInput = prompt("Please enter your age:");
+ageInput = Number(ageInput); // Convert the input to a number
+if (ageInput >= 18) {    
+    console.log("You are eligible to vote.");
+} else {
+    console.log("You are not eligible to vote.");
+}
+
+
+
 
 
 
