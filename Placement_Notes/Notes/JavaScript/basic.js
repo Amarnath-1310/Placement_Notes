@@ -416,7 +416,26 @@ switch (day) {
         break;
     default:
         console.log("Invalid day");
-}   
+} 
+
+// grade example using switch statement
+let mark = 85;
+switch (true) {
+    case mark >= 90:
+        console.log("Grade A");
+        break;
+    case mark >= 80:
+        console.log("Grade B");
+        break;
+    case mark >= 70:
+        console.log("Grade C");
+        break;
+    case mark >= 60:
+        console.log("Grade D");
+        break;
+    default:
+        console.log("Grade F");
+}
 
 // example of ternary operator
 let isMember = true;
@@ -480,9 +499,14 @@ if (ageInput >= 18) {
     console.log("You are not eligible to vote.");
 }
 
-
-
-
-
+// return statement in JavaScript
+// The return statement is used to exit a function and return a value from that function. 
+// When a return statement is executed, the function stops executing and the specified value is returned to the caller.
+// example of return statement
+function sum(a, b) {
+    return a + b; // This will return the sum of a and b to the caller
+}   
+let result = sum(5, 10);
+console.log(result); // This will print 15, as the sum function returns the value 15 to the caller, which is then stored in the variable result and printed to the console
 
 

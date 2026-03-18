@@ -1,48 +1,50 @@
-/* JavaScript supports the following forms of if...else statement −
-1) if statement
-2) if...else statement
-3) if...else if... statement.
-4) nested if...else statement.
+// break;
+//   → Used inside a loop (for, while, do-while) or switch.
+//   → Just the keyword and semicolon. No expression.
+//
+// continue;
+//   → Used only inside a loop (for, while, do-while). Not in switch.
+//   → Just the keyword and semicolon. No expression.
+//
+// Both are usually inside an if, so they run only when a condition is true:
+//
+//   for (...) {
+//     if (condition) {
+//       break;     // exit the loop
+//     }
+//   }
+//
+//   for (...) {
+//     if (condition) {
+//       continue;   // skip to next iteration
+//     }
+//   }
 
-/* 1. if statement:-
-    Syntax:
-    if (expression) {
-    Statement(s) to be executed if expression is true
+// Break Statement:-
+// It is used to break the loop and exit the loop.
+// Syntax: break;
+
+// Continue Statement:-
+// It is used to skip the current iteration and continue with the next iteration.
+// Syntax: continue;
+
+// ---------------------------------------------------------------------------------
+//Example of break statement
+for(let i=1;i<=10;i++) {
+    if(i==5) {
+        break;  // Exit loop immediately
     }
+    console.log(i);
+}
+// Output: 1 2 3 4
 
 
-/* 2. if...else statement:-
-    Syntax:
-    if (expression) {
-    Statement(s) to be executed if expression is true
-    } else {
-    Statement(s) to be executed if expression is false
+// ---------------------------------------------------------------------------------
+//Example of continue statement
+for(let i=1;i<=10;i++) {
+    if(i==5) {
+        continue;  // Skip this iteration, go to next
     }
-
-
-/* 3. if...else if... statement
-    Syntax:
-    if (expression 1) {
-    Statement(s) to be executed if expression 1 is true
-    } else if (expression 2) {
-    Statement(s) to be executed if expression 2 is true
-    } else if (expression 3) {
-    Statement(s) to be executed if expression 3 is true
-    } else {
-    Statement(s) to be executed if no expression is true
-    }
-*/
-
-/* 4. nested if...else statement:-
-    Syntax:
-    if (expression 1) {
-    Statement(s) to be executed if expression 1 is true
-        if (expression 2) {
-        Statement(s) to be executed if expression 2 is true
-        } else {
-        Statement(s) to be executed if expression 2 is false
-        }
-    } else {
-    Statement(s) to be executed if expression 1 is false
-    }
-*/
+    console.log(i);
+}
+// Output: 1 2 3 4 6 7 8 9 10
