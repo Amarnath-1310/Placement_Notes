@@ -510,3 +510,65 @@ let result = sum(5, 10);
 console.log(result); // This will print 15, as the sum function returns the value 15 to the caller, which is then stored in the variable result and printed to the console
 
 
+// Array in JavaScript
+// An array is a data structure that can hold a collection of values. 
+// In JavaScript, arrays are dynamic and can hold values of different types.
+// example of array
+let arr1 = [1, 2, 3, 4, 5];
+console.log(arr1); // This will print [1, 2, 3, 4, 5]
+let arr2 = ["Hello", 42, true, null];
+console.log(arr2); // This will print ["Hello", 42, true, null]
+
+// array methods in JavaScript
+// push(), pop(), shift(), unshift(), indexOf(), includes(), slice(), splice(), forEach(), map(), filter(), reduce(), and more.
+// example of array methods
+let arr3 = [1, 2, 3];
+arr3.push(4); // This will add 4 to the end of the array, so arr3 will become [1, 2, 3, 4]
+console.log(arr3);
+arr3.pop(); // This will remove the last element of the array, so arr3 will become [1, 2, 3]
+console.log(arr3);
+arr3.unshift(0); // This will add 0 to the beginning of the array, so arr3 will become [0, 1, 2, 3]
+console.log(arr3);
+arr3.shift(); // This will remove the first element of the array, so arr3 will become [1, 2, 3]
+console.log(arr3);
+console.log(arr3.indexOf(2)); // This will print 1, as the index of the element 2 in the array is 1
+console.log(arr3.includes(3)); // This will print true, as the array includes the element 3
+//----------------------------------------------------------------------------------
+console.log(arr3.slice(1, 3)); // This will print [2, 3], as slice(1, 3) returns a new array containing the elements from index 1 to index 2 (not including index 3)
+
+arr3.splice(1, 2); // This will remove 2 elements starting from index 1, so arr3 will become [1, 4]
+console.log(arr3); // This will print [1, 4], as the elements at index 1 and 2 (which are 2 and 3) have been removed from the array
+
+// forEach() example
+// The forEach() method executes a provided function once for each array element.
+arr3.forEach((element) => {
+    console.log(element); // This will print each element of the array on a new line (1 and 4 in this case)
+});
+
+// map() example
+// The map() method creates a new array with the results of calling a provided function on every element in the calling array.
+let arr4 = [1, 2, 3, 4, 5];
+let squaredArr = arr4.map((element) => element * element);  
+console.log(squaredArr); // This will print [1, 4, 9, 16, 25], as map() creates a new array with the results of calling a provided function on every element in the calling array (in this case, it squares each element)   
+
+// filter() example
+// The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+let arr5 = [1, 2, 3, 4, 5];
+let evenNumbers = arr5.filter((element) => element % 2 === 0);  
+console.log(evenNumbers); // This will print [2, 4], as filter() creates a new array with all elements that pass the test implemented by the provided function (in this case, it checks if the element is even)
+
+// reduce() example
+// The reduce() method executes a reducer function on each element of the array, resulting in a single output value.
+let arr6 = [1, 2, 3, 4];
+let sumArr6 = arr6.reduce((sum, element) => sum + element, 0);  
+console.log(sumArr6); // This will print 10, as reduce() executes the provided function for each value of the array (from left to right) and reduces it to a single value (the sum of all elements in this case)
+
+// some and every() example
+// The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
+// The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+let arr7 = [1, 2, 3, 4, 5];
+console.log(arr7.some((element) => element > 4)); // This will print true, as some() tests whether at least one element in the array is greater than 4 (in this case, 5 is greater than 4)
+console.log(arr7.every((element) => element > 0)); // This will print true, as every() tests whether all elements in the array are greater than 0 (in this case, all elements are greater than 0)
+
+// In summary, arrays are a fundamental data structure in JavaScript that allow you to store and manipulate collections of values.
+
