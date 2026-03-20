@@ -837,10 +837,9 @@ display("Hello", "World", "!"); // This will also print "No arguments or more th
 // promises in JavaScript
 // A promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. 
 // Promises provide a cleaner and more manageable way to handle asynchronous code compared to traditional callback functions.
-// example of a promise
-
 // In summary, promises in JavaScript provide a powerful way to handle asynchronous operations, allowing you to write cleaner and more maintainable code when dealing with tasks that may take time to complete, such as API calls, file reading, or timers.
 
+// promise example 
 
 // Inheritance in JavaScript
 // Inheritance is a fundamental concept in object-oriented programming that allows a new class (called a subclass or child class) to inherit properties and methods from an existing class (called a superclass or parent class).
@@ -868,3 +867,5 @@ let dog1 = new Dog("Buddy", "Golden Retriever");
 dog1.speak(); // This will call the speak method inherited from the Animal class, which will print "Buddy makes a sound."
 dog1.bark(); // This will call the bark method of the Dog class, which will print "Buddy barks: Woof!"
 // In summary, inheritance in JavaScript allows you to create new classes that can reuse and extend the functionality of existing classes, promoting code reusability and a hierarchical class structure.
+
+
