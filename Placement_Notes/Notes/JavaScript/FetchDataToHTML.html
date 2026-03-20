@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <button>click</button>
+    <h1 id="hone"></h1>
+    <p id="pone"></p>
+    <b id="bone"></b>
+  </div>
+  <div>
+    <h1 id="htwo"></h1>
+    <p id="ptwo"></p>
+    <b id="btwo"></b>
+  </div>
+  <script>
+    async function dataFetching() {
+      let url = "http://localhost:8080/customers/customer/";
+      let response = await fetch(url);
+      let data = await response.json();
+      console.log(data);
+      if (data.length >= 0) {
+        document.getElementById("hone").textContent = data[8].name;
+        document.getElementById("pone").textContent = data[8].dept;
+        document.getElementById("bone").textContent = "Salary: " + data[8].salary;
+      }
+      if (data.length > 1) {
+        document.getElementById("htwo").textContent = data[1].name;
+        document.getElementById("ptwo").textContent = data[1].dept;
+        document.getElementById("btwo").textContent = "Salary: " + data[1].salary;
+      }
+    }
+  
+    dataFetching();
+  </script>
+</body>
+
+</html>

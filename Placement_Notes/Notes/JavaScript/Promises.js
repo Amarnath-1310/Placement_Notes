@@ -36,7 +36,7 @@ function ticketbooking(prize) {
     },5000);
   });
 }
-
+ticketbooking(600);
 
 async function bookingupdate(){
     let result = await ticketbooking(1500);
